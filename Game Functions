@@ -45,3 +45,25 @@ private void Reset()
             timer1.Start();
 
         }
+        
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Score++; //Increase score as we move
+            lblDistanceAmount.Text = " " + Score;
+
+            pbRoadTrack1.Top += roadSpeed; //Move track 1 down
+            pbRoadTrack2.Top += roadSpeed; //Move track 2 down
+
+            //if track goes past -630 we set it back to default
+            //this creates a seemless transition
+
+            if(pbRoadTrack1.Top > 630 )
+            {
+                pbRoadTrack1.Top = -630;
+            }
+            if(pbRoadTrack2.Top > 630)
+            {
+                pbRoadTrack2.Top = -630;
+            }
+        }
+    }
