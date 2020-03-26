@@ -1,1 +1,47 @@
+//Global Variables
+        int carSpeed = 5;
+        int roadSpeed = 5;
+        bool carLeft;
+        bool carRight;
+        int trafficSpeed = 5;
+        int Score = 0;
+        Random rnd = new Random();
 
+
+
+
+
+
+private void Reset()
+        {
+            pbTrophy.Visible = false;
+            btnStart.Visible = false; //disable button when game is running 
+            pbExplosion.Visible = false;
+
+            trafficSpeed = 5; //Set traffic speed back to default
+            roadSpeed = 5; //Set road speed back to default
+            Score = 0; //Reset score to zero
+
+            pbPlayer.Left = 161; //Reset player left
+            pbPlayer.Top = 286; //Reset player Top
+
+            carLeft = false;
+            carRight = false;
+
+            //Move AI to default postions this will be off screen
+            pbAL1.Left = 66;
+            pbAL1.Top = -120;
+
+            pbAL2.Left = 294;
+            pbAL2.Top = -185;
+
+            //Reset road back to default postion
+            pbRoadTrack2.Left = -3;
+            pbRoadTrack2.Top = -222;
+            pbRoadTrack1.Left = -2;
+            pbRoadTrack1.Top = -638;
+
+            //Start the timer
+            timer1.Start();
+
+        }
