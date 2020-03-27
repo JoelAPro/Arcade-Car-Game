@@ -66,6 +66,9 @@ private void Reset()
                 pbRoadTrack2.Top = -630;
             }
             
+            if (carLeft) { pbPlayer.Left -= carSpeed; }//move the car left if carLeft is true
+            if (carRight) { pbPlayer.Left += carSpeed; }//move the car right if carRight is true
+
              //Bounce the car off the boundries of the panel
             if(pbPlayer.Left < 1)
             {
@@ -81,5 +84,8 @@ private void Reset()
             pbAL2.Top += trafficSpeed;
 
             //Respawn the AI and change their image
+
+           
+
         }
     }
