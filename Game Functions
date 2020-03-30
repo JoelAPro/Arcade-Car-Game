@@ -84,6 +84,74 @@ private void Reset()
             pbAL2.Top += trafficSpeed;
 
             //Respawn the AI and change their image
+            if(pbAL1.Top > panel1.Height)
+            {
+                changepbAL1();//Change the AI Image once they have left the screen
+                pbAL1.Left = rnd.Next(2, 160); //random number where they appear on the left
+                pbAL1.Top = rnd.Next(100, 200) * - 1; //random number where they appear on the right
+            }
+
+            if (pbAL2.Top > panel1.Height)
+            {
+                changepbAL2();//Change the AI Image once they have left the screen
+                pbAL2.Left = rnd.Next(185, 327); //random number where they appear on the left
+                pbAL2.Top = rnd.Next(100, 200) * -1; //random number where they appear on the right
+            }
+
+            //If player hits AI
+            if(pbPlayer.Bounds.IntersectsWith(pbAL1.Bounds) || pbPlayer.Bounds.IntersectsWith(pbAL2.Bounds) )
+            {
+                gameOver();
+            }
+
+            //Speeding up traffic the greater the distance
+            if(Score > 100 && Score < 500)
+            {
+                trafficSpeed = 6;
+                roadSpeed = 7;
+            }
+            else if(Score > 500 && Score < 1000)
+            {
+                trafficSpeed = 7;
+                roadSpeed = 8;
+            }
+            else if(Score > 1200)
+            {
+                trafficSpeed = 9;
+                roadSpeed = 10;
+            }
+
+
+        }
+
+        private void moveCar(object sender, KeyEventArgs e)
+        {
+            //if player presses left key and player is inside the panal
+            //then we set the left boolean to true
+            if(e.KeyCode == Keys.Left && pbPlayer > 0)
+            {
+                carLeft = true;
+            }
+
+            if(e.KeyCode == Keys.Right && pbPlayer.Left + pbPlayer.Width < panel1.Width)
+            {
+                carRight = true;
+            }
+        }
+
+        private void stopCar(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Left)
+            {
+                carLeft = false;
+            }
+
+            if(e.KeyCode == Keys.Right)
+            {
+                carRight = false;
+            }
+            
+        }
 
            
 
