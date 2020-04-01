@@ -152,6 +152,78 @@ private void Reset()
             }
             
         }
+          private void changepbAI1()
+        {
+            int num = rnd.Next(1, 8);//Local variable to generate number between 1 and 8
+            //By using a switch statement we can show any image based on that image
+
+            switch (num)
+            {
+                case 1:
+                    pbAL1.Image = Properties.Resources.carGreen;
+                    break;
+                case 2:
+                    pbAL1.Image = Properties.Resources.carGrey;
+                    break;
+                case 3:
+                    pbAL1.Image = Properties.Resources.carOrange;
+                    break;
+                case 4:
+                    pbAL1.Image = Properties.Resources.carPink;
+                    break;
+                case 5:
+                    pbAL1.Image = Properties.Resources.CarRed;
+                    break;
+                case 6:
+                    pbAL1.Image = Properties.Resources.TruckBlue;
+                    break;
+                case 7:
+                    pbAL1.Image = Properties.Resources.TruckWhite;
+                    break;
+                case 8:
+                    pbAL1.Image = Properties.Resources.ambulance;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+            private void changepbAI2()
+            {
+                int num = rnd.Next(1, 8);//Local variable to generate number between 1 and 8
+                                         //By using a switch statement we can show any image based on that image
+
+                switch (num)
+                {
+                    case 1:
+                        pbAL2.Image = Properties.Resources.carGreen;
+                        break;
+                    case 2:
+                        pbAL2.Image = Properties.Resources.carGrey;
+                        break;
+                    case 3:
+                        pbAL2.Image = Properties.Resources.carOrange;
+                        break;
+                    case 4:
+                        pbAL2.Image = Properties.Resources.carPink;
+                        break;
+                    case 5:
+                        pbAL2.Image = Properties.Resources.CarRed;
+                        break;
+                    case 6:
+                        pbAL2.Image = Properties.Resources.TruckBlue;
+                        break;
+                    case 7:
+                        pbAL2.Image = Properties.Resources.TruckWhite;
+                        break;
+                    case 8:
+                        pbAL2.Image = Properties.Resources.ambulance;
+                        break;
+                    default:
+                        break;
+                }
+
+            }
 
            
 
