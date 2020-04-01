@@ -225,37 +225,7 @@ private void Reset()
 
             }
             
-        private void gameOver()
-        {
-            pbTrophy.Visible = true;
-            timer1.Stop();
-            btnStart.Enabled = true;
-
-            //Showing the explosion image on top of the car image
-            pbExplosion.Visible = true;
-            pbPlayer.Controls.Add(pbExplosion);//Add explosion image on top of car image
-            pbExplosion.Location = new Point(-8; 5); //moving the image so it is postioned suitably
-            pbExplosion.BackColor = Color.Transparent;
-            pbExplosion.BringToFront(); //bring to front of player image
-
-            //final score trophy
-            if(Score < 1000)
-            {
-                pbTrophy.Image = Properties.Resources.bronze;
-            }
-
-            if(Score > 2000)
-            {
-                pbTrophy.Image = Properties.Resources.silver;
-            }
-
-            if(Score > 3000)
-            {
-                pbTrophy.Image = Properties.Resources.gold;
-            }
-        }
-
-           
+      
 
         }
     }
